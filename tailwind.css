@@ -2,7 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/** Custom integrations */
+
+/*=== Classes for TailwindCSS wrapper ===*/
+
+.header__area { @apply w-full m-0 p-0 flex flex-col; }
+
+.navbar { @apply hidden lg:flex flex-col w-full; }
+
+.topnav {
+    @apply flex items-center py-2 w-full bg-white border-b-2 border-gray-100;
+}
+
+.topnav__left {
+    @apply list-none pl-0 flex items-center gap-x-6 mr-auto;
+}
+
+.topnav__right {
+    @apply list-none ml-auto pl-0 flex items-center justify-end gap-x-6;
+}
+
+.topnav__left .topnav__item {
+    @apply text-gray-500 hover:text-gray-700 capitalize;
+}
+
+.topnav__right .topnav__item {
+    @apply text-gray-700 capitalize;
+}
+
+.menu__category {
+    @apply hidden z-50 rounded shadow-sm list-none pl-0 group-hover:flex transition-all border-t-2 flex-col absolute top-[101%] left-0 w-full bg-white border-[1px] border-orange-500;
+}
+
+.menu__category .menu__items {
+    @apply hover:text-orange-500 py-2.5 capitalize flex items-center pl-5 border-b-[1px] border-gray-100;
+}
+
+.heronav__area {
+    @apply w-full flex items-center py-4 bg-white;
+}
+
+.nav__search {
+    @apply border-2 border-orange-400 py-3 px-5 pr-14 xl:min-w-[500px] rounded-md block outline-none;
+}
+
+.nav__search__btn {
+    @apply absolute hover:translate-x-1 transition-all top-0 right-0 p-3.5 capitalize rounded-md bg-orange-500 text-white;
+}
+
+.menu__btns {
+    @apply ml-auto flex items-center justify-end gap-x-6;
+}
+
+.menu__btns__item {
+    @apply relative rounded-full p-3.5 bg-orange-100 text-orange-500 border-2 transition-all border-transparent hover:border-orange-600;
+}
+
+.menu__btns__item__element {
+    @apply flex absolute top-0 right-[-4px] w-5 h-5 bg-orange-500 text-white items-center justify-center rounded-full;
+}
+
+.primary__menu {
+    @apply w-full flex items-center bg-white border-t-[1px] border-gray-100;
+}
+
+.category__menu__btn {
+    @apply flex items-center gap-x-2 rounded-sm justify-center mr-auto transition-all hover:bg-orange-600 bg-orange-500 text-white uppercase py-4 px-8;
+}
+
+.main__menu {
+    @apply pl-0 list-none flex items-center gap-x-6 ml-auto;
+}
+
+.main__menu__item {
+    @apply flex items-center justify-center transition-all text-gray-600 hover:text-orange-600 uppercase font-semibold py-4 px-6;
+}
+
+.main__menu__submenu {
+    @apply hidden group-hover:flex group-hover:visible z-50 translate-y-5 group-hover:translate-y-0 transition-all flex-col lg:min-w-[150px] xl:min-w-[200px] absolute top-[100.5%] left-0 shadow-sm border-t-2 border-orange-500 list-none pl-0 bg-white text-gray-600;
+}
+
+.main__menu__list__item {
+    @apply flex items-center hover:text-orange-500 capitalize py-3 px-5 border-b-2 border-gray-100;
+}
+
+/*=== Custom integrations ===*/
 .container {
     display: flex;
     width: 100%;
