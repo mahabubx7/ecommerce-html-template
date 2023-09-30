@@ -7,6 +7,18 @@
 
 .header__area { @apply w-full m-0 p-0 flex flex-col; }
 
+.logo__element {
+    @apply inline-flex text-orange-500 font-bold text-4xl;
+}
+
+.logo__last__part {
+    @apply text-green-400 font-bold;
+}
+
+.logo__dot {
+    @apply text-orange-600 font-bold;
+}
+
 .navbar { @apply hidden lg:flex flex-col w-full; }
 
 .topnav {
@@ -85,6 +97,67 @@
     @apply flex items-center hover:text-orange-500 capitalize py-3 px-5 border-b-2 border-gray-100;
 }
 
+.cart__area {
+    @apply flex-col translate-x-0 transition-all fixed top-0 right-0 w-[100%] md:max-w-[320px] lg:max-w-[410px] bg-slate-50 min-h-screen shadow z-50;
+}
+
+.cart__area h2 {
+    @apply block relative font-bold pl-4 capitalize text-2xl lg:text-3xl w-full text-orange-500;
+}
+
+.close__cart {
+    @apply inline-flex items-center justify-center absolute top-6 lg:top-8 right-6 cursor-pointer;
+}
+
+.cart__items__area {
+    @apply flex flex-col py-3 px-2 gap-y-2;
+}
+
+.cart__summary {
+    @apply absolute bottom-24 left-0 w-full min-h-[40px] bg-white border-t-2 border-gray-100
+    lg:bottom-2 p-2;
+}
+
+.cart__item {
+    @apply flex flex-row gap-2 justify-between bg-white shadow-sm rounded-sm p-1;
+}
+.cart__item > img {
+    @apply w-[64px] max-h-[64px] self-center pl-0;
+}
+
+.cart__item__product__qty {
+    @apply flex gap-1 text-xs items-center;
+}
+
+.qty__handler {
+    @apply max-w-[32px] bg-slate-50 rounded-sm inline-block;
+}
+
+.qty__up,
+.qty__down {
+    @apply w-4 h-4 rounded-sm bg-slate-100 inline-flex items-center justify-center;
+}
+
+.qty__up { @apply bg-green-400 text-white; }
+
+.qty__down { @apply bg-red-400 text-white; }
+
+.cart__item__product__price {
+    @apply pr-1;
+}
+
+.cart__bottom__btns {
+    @apply flex flex-col gap-3 justify-start lg:justify-between lg:flex-row mt-4;
+}
+
+.btn__cart__soft,
+.btn__cart__main {
+    @apply py-2 px-4 border border-2 border-gray-100 rounded-md capitalize text-white font-semibold;
+}
+
+.btn__cart__soft { @apply bg-gray-500; }
+.btn__cart__main { @apply bg-orange-500 px-6; }
+
 /*=== Custom integrations ===*/
 .container {
     display: flex;
@@ -124,7 +197,7 @@
 
 @keyframes fadeOutRight {
     0% {
-        opacity: 1;
+        opacity: 0;
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -132,16 +205,21 @@
         -o-transform: translateX(0);
     }
 
+    1% {
+        opacity: 1;
+    }
+
     99.99% {
+        opacity: 0.9;
         transform: translateX(800px);
         -webkit-transform: translateX(800px);
         -moz-transform: translateX(800px);
         -ms-transform: translateX(800px);
         -o-transform: translateX(800px);
-}
+    }
 
     100% {
-        opacity: 1;
+        opacity: 0;
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);

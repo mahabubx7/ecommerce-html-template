@@ -31,9 +31,9 @@
     cartClose.addEventListener('click', function() {
         cartArea.classList.add('fade-out-right');
         setTimeout(function() {
-            cartArea.classList.add('hidden');
             cartArea.classList.remove('fade-out-right');
-        }, 299);
+            cartArea.classList.add('hidden');
+        }, 199);
     });
 
 
